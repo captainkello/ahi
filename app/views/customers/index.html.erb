@@ -1,0 +1,53 @@
+<h1>Listing customers</h1>
+
+<table>
+  <tr>
+    <th>Company</th>
+    <th>Address</th>
+    <th>City</th>
+    <th>Island</th>
+    <th>State</th>
+    <th>Zip</th>
+    <th>Phone</th>
+    <th>Contact</th>
+    <th>Contactphone</th>
+    <th>Adtime</th>
+    <th>Salesperson</th>
+    <th>Depositdate</th>
+    <th>Fullpaymentdate</th>
+    <th>Renewaldate</th>
+    <th>Referredby</th>
+    <th>Ennlead</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @customers.each do |customer| %>
+  <tr>
+    <td><%= customer.company %></td>
+    <td><%= customer.address %></td>
+    <td><%= customer.city %></td>
+    <td><%= customer.island %></td>
+    <td><%= customer.state %></td>
+    <td><%= customer.zip %></td>
+    <td><%= customer.phone %></td>
+    <td><%= customer.contact %></td>
+    <td><%= customer.contactphone %></td>
+    <td><%= customer.adtime %></td>
+    <td><%= customer.salesperson %></td>
+    <td><%= customer.depositdate %></td>
+    <td><%= customer.fullpaymentdate %></td>
+    <td><%= customer.renewaldate %></td>
+    <td><%= customer.referredby %></td>
+    <td><%= customer.ennlead %></td>
+    <td><%= link_to 'Show', customer %></td>
+    <td><%= link_to 'Edit', edit_customer_path(customer) %></td>
+    <td><%= link_to 'Delete', customer, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Customer', new_customer_path %>
